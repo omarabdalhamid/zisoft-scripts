@@ -80,9 +80,9 @@ sudo zisoft package
 #--------------------------------------------------
 sudo zisoft deploy --prod
 
-container_web_id="$(docker ps | grep web | awk '{print $1}')"
+container_web_id="$(sudo docker ps | grep web | awk '{print $1}')"
 
-docker exec -it $container_web_id bash -c "php artisan db:seed --class=init"
+sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=init"
 
 #--------------------------------------------------
 #  ZiSoft Awareness Project  Installed Successfully 

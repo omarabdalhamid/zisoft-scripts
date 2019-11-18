@@ -55,6 +55,8 @@ sudo apt-get install docker-ce -y
 
 sudo apt-get install docker-compose -y
 
+sudo usermod -aG docker ${USER}
+
 sudo docker login registry.gitlab.com
 sudo docker swarm init
 
@@ -70,13 +72,13 @@ cd ..
 #--------------------------------------------------
 # Build && Package  ZiSoft Awareness Project
 #--------------------------------------------------
-zisoft build --docker --sass --app --ui --composer
-zisoft package
+sudo zisoft build --docker --sass --app --ui --composer
+sudo zisoft package
 
 #--------------------------------------------------
 # Deploy  ZiSoft Awareness Project
 #--------------------------------------------------
-zisoft deploy --prod
+sudo zisoft deploy --prod
 
 container_web_id="$(docker ps | grep web | awk '{print $1}')"
 

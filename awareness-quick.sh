@@ -93,13 +93,13 @@ sudo docker pull registry.gitlab.com/omarabdalhamid/awareness_swarm/meta:20_11_2
 
 sudo docker pull registry.gitlab.com/omarabdalhamid/awareness_swarm/worker:20_11_2019
 
-sudo docker pull registry.gitlab.com/omarabdalhamid/awareness_swarm/proxy :20_11_2019
+sudo docker pull registry.gitlab.com/omarabdalhamid/awareness_swarm/proxy:20_11_2019
 
 #--------------------------------------------------
 # Deploy  ZiSoft Awareness Project
 #--------------------------------------------------
 
-docker stack deploy -c <(docker-compose config) zisoft-$release_date
+sudo docker stack deploy -c <(docker-compose config) zisoft-$release_date
 
 container_web_id="$(sudo docker ps | grep web | awk '{print $1}')"
 

@@ -37,8 +37,6 @@ sudo echo "release_tag=$release_date"  >>  awareness_swarm/.env
 
 sudo apt-get update -y
 
-sudo apt install npm -y
-
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \

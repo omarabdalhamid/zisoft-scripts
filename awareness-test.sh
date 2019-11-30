@@ -17,7 +17,6 @@ echo "\n#############################################"
 
 echo  "\n--- Installing ZiSoft From Branch --"
 
-
 echo "\n#############################################"
 
 read -p "Enter ZiSoft Awareness  Branch Name :   "  release_date

@@ -15,7 +15,7 @@
 
 echo "\n#############################################"
 
-echo -e "\n--- Installing ZiSoft From Branch --"
+echo  "\n--- Installing ZiSoft From Branch --"
 
 
 echo "\n#############################################"
@@ -30,7 +30,7 @@ read -p "Enter ZiSoft Awareness  Branch Name :   "  release_date
 
 echo "\n#############################################"
 
-echo -e "\n--- Clone ZiSoft branch --"
+echo "\n--- Clone ZiSoft branch --"
 
 echo "\n#############################################"
 
@@ -47,7 +47,7 @@ sudo git clone https://gitlab.com/zisoft/awareness.git --branch $release_date
 
 echo "\n#############################################"
 
-echo -e "\n--- Download Docker Repositry --"
+echo  "\n--- Download Docker Repositry --"
 
 
 echo "\n#############################################"
@@ -90,7 +90,7 @@ sudo docker swarm init
 
 echo "\n#############################################"
 
-echo -e "\n--- Download NPM Packages --"
+echo  "\n--- Download NPM Packages --"
 
 echo "\n#############################################"
 
@@ -106,7 +106,7 @@ cd ..
 
 echo "\n#############################################"
 
-echo -e "\n--- Build ZiSoft APP--"
+echo "\n--- Build ZiSoft APP--"
 
 
 echo "\n#############################################"
@@ -125,7 +125,7 @@ sudo zisoft package
 echo "\n#############################################"
 
 
-echo -e "\n--- Deploy ZiSoft APP--"
+echo  "\n--- Deploy ZiSoft APP--"
 
 
 echo "\n#############################################"
@@ -147,7 +147,7 @@ docker stack deploy --compose-file=portainer-agent-stack.yml portainer
 echo "\n#############################################"
 
 
-echo -e "\n-----ZiSoft Awareness Project  Installed Successfully ----"
+echo "\n-----ZiSoft Awareness Project  Installed Successfully ----"
 
 
 echo "\n#############################################"

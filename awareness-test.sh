@@ -12,7 +12,13 @@
 # Execute the script to install zisoft:
 # ./zisoft-install.sh
 ################################################################################
-echo -e "\n--- Installing ZiSoft branch --"
+
+echo "#############################################"
+
+echo -e "\n--- Installing ZiSoft From Branch --"
+
+
+echo "#############################################"
 
 read -p "Enter ZiSoft Awareness  Branch Name :   "  release_date
 
@@ -22,7 +28,11 @@ read -p "Enter ZiSoft Awareness  Branch Name :   "  release_date
 # Clone ZiSoft Awareness Repo
 #--------------------------------------------------
 
+echo "\n#############################################"
+
 echo -e "\n--- Clone ZiSoft branch --"
+
+echo "\n#############################################"
 
 
 sudo mkdir zisoft-test
@@ -34,8 +44,13 @@ sudo git clone https://gitlab.com/zisoft/awareness.git --branch $release_date
 # Update Server
 #--------------------------------------------------
 
+
+echo "\n#############################################"
+
 echo -e "\n--- Download Docker Repositry --"
 
+
+echo "\n#############################################"
 
 sudo apt-get update -y
 sudo apt install npm -y
@@ -72,7 +87,12 @@ sudo docker swarm init
 #--------------------------------------------------
 # Run npm Package of ZiSoft CLI
 #--------------------------------------------------
-echo -e "\n--- Download NPM Repositry --"
+
+echo "\n#############################################"
+
+echo -e "\n--- Download NPM Packages --"
+
+echo "\n#############################################"
 
 
 cd awareness/cli
@@ -83,8 +103,13 @@ cd ..
 #--------------------------------------------------
 # Build && Package  ZiSoft Awareness Project
 #--------------------------------------------------
+
+echo "\n#############################################"
+
 echo -e "\n--- Build ZiSoft APP--"
 
+
+echo "\n#############################################"
 
 sudo zisoft build --docker --sass --app --ui --composer
 
@@ -97,8 +122,13 @@ sudo zisoft package
 # Deploy  ZiSoft Awareness Project
 #--------------------------------------------------
 
+echo "\n#############################################"
+
+
 echo -e "\n--- Deploy ZiSoft APP--"
 
+
+echo "\n#############################################"
 
 sudo zisoft deploy --prod
 
@@ -113,4 +143,12 @@ docker stack deploy --compose-file=portainer-agent-stack.yml portainer
 #--------------------------------------------------
 #  ZiSoft Awareness Project  Installed Successfully 
 #--------------------------------------------------
+
+echo "\n#############################################"
+
+
+echo -e "\n-----ZiSoft Awareness Project  Installed Successfully ----"
+
+
+echo "\n#############################################"
 

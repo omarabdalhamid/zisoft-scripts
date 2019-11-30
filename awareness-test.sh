@@ -14,7 +14,7 @@
 ################################################################################
 echo -e "\n--- Installing ZiSoft branch --"
 
-read -p "Enter ZiSoft Awareness Release Date :   "  release_date
+read -p "Enter ZiSoft Awareness  Branch Name :   "  release_date
 
 
 

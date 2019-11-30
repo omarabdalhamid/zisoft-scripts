@@ -12,6 +12,9 @@
 # Execute the script to install zisoft:
 # ./zisoft-install.sh
 ################################################################################
+echo -e "\n--- Installing ZiSoft branch --"
+
+read -p "Enter ZiSoft Awareness Release Date :   "  release_date
 
 
 
@@ -19,14 +22,20 @@
 # Clone ZiSoft Awareness Repo
 #--------------------------------------------------
 
+echo -e "\n--- Clone ZiSoft branch --"
+
+
 sudo mkdir zisoft-test
 cd  zisoft-test
-sudo git clone https://gitlab.com/zisoft/awareness.git
+sudo git clone https://gitlab.com/zisoft/awareness.git --branch $release_date
 
 
 #--------------------------------------------------
 # Update Server
 #--------------------------------------------------
+
+echo -e "\n--- Download Docker Repositry --"
+
 
 sudo apt-get update -y
 sudo apt install npm -y
@@ -63,6 +72,8 @@ sudo docker swarm init
 #--------------------------------------------------
 # Run npm Package of ZiSoft CLI
 #--------------------------------------------------
+echo -e "\n--- Download NPM Repositry --"
+
 
 cd awareness/cli
 sudo npm update
@@ -72,12 +83,23 @@ cd ..
 #--------------------------------------------------
 # Build && Package  ZiSoft Awareness Project
 #--------------------------------------------------
+echo -e "\n--- Build ZiSoft APP--"
+
+
 sudo zisoft build --docker --sass --app --ui --composer
+
+echo -e "\n--- Package ZiSoft APP--"
+
+
 sudo zisoft package
 
 #--------------------------------------------------
 # Deploy  ZiSoft Awareness Project
 #--------------------------------------------------
+
+echo -e "\n--- Deploy ZiSoft APP--"
+
+
 sudo zisoft deploy --prod
 
 container_web_id="$(sudo docker ps | grep web | awk '{print $1}')"

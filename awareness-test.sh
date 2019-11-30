@@ -106,6 +106,10 @@ container_web_id="$(sudo docker ps | grep web | awk '{print $1}')"
 
 sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=init"
 
+curl -L https://downloads.portainer.io/portainer-agent-stack.yml -o portainer-agent-stack.yml
+
+docker stack deploy --compose-file=portainer-agent-stack.yml portainer
+
 #--------------------------------------------------
 #  ZiSoft Awareness Project  Installed Successfully 
 #--------------------------------------------------

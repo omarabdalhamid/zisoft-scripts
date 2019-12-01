@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zi-meta
+  labels:
+    app: zi-meta
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: zi-meta
+    tier: metabase
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wp-pv-claim
+  labels:
+    app: zi-meta
+spec:
+  storageClassName: rook-ceph-block
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zi-meta
+  labels:
+    app: zi-meta
+    tier: metabase
+spec:
+  selector:
+    matchLabels:
+      app: zi-meta
+      tier: metabase
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: zi-meta
+        tier: metabase
+    spec:
+      containers:
+      - image: registry.gitlab.com/omarabdalhamid/awareness_swarm/meta:20_11_2019
+        name: zi-meta
+        env:
+        - name: MB_DB_FILE
+          value: /tmp/metabase.db
+        ports:
+        - containerPort: 80
+          name: zi-meta

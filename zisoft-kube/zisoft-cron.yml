@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zi-cron
+  labels:
+    app: zi-cron
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: zi-cron
+    tier: cron
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zi-cron
+  labels:
+    app: zi-cron
+    tier: cron
+spec:
+  selector:
+    matchLabels:
+      app: zi-cron
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: zi-cron
+        tier: cron
+    spec:
+      containers:
+      - image: registry.gitlab.com/omarabdalhamid/awareness_swarm/cron:20_11_2019
+        name: zi-cron
+          name: zi-cron

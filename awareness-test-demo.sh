@@ -21,9 +21,6 @@ echo "\n#############################################"
 
 read -p "Enter ZiSoft Awareness  Branch Name :   "  release_date
 
-sudo wget https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/Demo.php
-sudo rm -rf awareness/app/Console/Commands/Demo.php
-sudo mv Demo.php awareness/app/Console/Commands/
 
 #--------------------------------------------------
 # Clone ZiSoft Awareness Repo
@@ -119,6 +116,10 @@ echo -e "\n--- Package ZiSoft APP--"
 
 
 sudo zisoft package
+
+sudo wget https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/Demo.php
+sudo rm -rf awareness/app/Console/Commands/Demo.php
+sudo mv Demo.php awareness/app/Console/Commands/
 
 #--------------------------------------------------
 # Deploy  ZiSoft Awareness Project

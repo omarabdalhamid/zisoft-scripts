@@ -21,7 +21,7 @@ echo "\n#############################################"
 
 read -p "Enter ZiSoft Awareness  Branch Name :   "  release_date
 
-sudo wget https://github.com/omarabdalhamid/zisoft-scripts/blob/master/Demo.php 
+sudo wget https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/Demo.php
 sudo rm -rf awareness/app/Console/Commands/Demo.php
 sudo mv Demo.php awareness/app/Console/Commands/
 

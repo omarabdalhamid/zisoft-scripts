@@ -171,9 +171,6 @@ sudo docker exec -it $container_web_id bash -c "php artisan zisoft:demo 100 5 30
 
 sudo docker restart $container_ui_id
 
-curl -L https://downloads.portainer.io/portainer-agent-stack.yml -o portainer-agent-stack.yml
-
-sudo docker stack deploy --compose-file=portainer-agent-stack.yml portainer
 
 #--------------------------------------------------
 #  ZiSoft Awareness Project  Installed Successfully 

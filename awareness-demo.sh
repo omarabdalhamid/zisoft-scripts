@@ -110,6 +110,10 @@ echo "\n--- Build ZiSoft APP--"
 
 echo "\n#############################################"
 
+sudo wget https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/Demo.php
+sudo rm -rf awareness/app/Console/Commands/Demo.php
+sudo mv Demo.php awareness/app/Console/Commands/
+
 sudo zisoft build --docker --sass --app --ui --composer
 
 echo -e "\n--- Package ZiSoft APP--"
@@ -117,9 +121,6 @@ echo -e "\n--- Package ZiSoft APP--"
 
 sudo zisoft package
 
-sudo wget https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/Demo.php
-sudo rm -rf awareness/app/Console/Commands/Demo.php
-sudo mv Demo.php awareness/app/Console/Commands/
 
 #--------------------------------------------------
 # Deploy  ZiSoft Awareness Project
@@ -135,7 +136,7 @@ echo "\n#############################################"
 
 sudo zisoft deploy --prod
 
-sleep 5m
+sleep 3m
 
 container_web_id="$(sudo docker ps | grep web | awk '{print $1}')"
 

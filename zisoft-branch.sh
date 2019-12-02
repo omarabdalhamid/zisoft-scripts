@@ -6,11 +6,11 @@
 # This script will install ZiSoft Awareness 3 on your Ubuntu 18.04 server. I
 #-------------------------------------------------------------------------------
 # Make a new file:
-# sudo nano zisoft-install.sh
+# sudo nano zisoft-branch.sh
 # Place this content in it and then make the file executable:
 # sudo chmod +x zisoft-install.sh
 # Execute the script to install zisoft:
-# ./zisoft-install.sh
+# ./zisoft-branch.sh
 ################################################################################
 
 echo "\n#############################################"

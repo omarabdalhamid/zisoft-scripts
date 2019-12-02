@@ -22,7 +22,6 @@ echo "\n#############################################"
 read -p "Enter ZiSoft Awareness  Branch Name :   "  release_date
 
 
-
 #--------------------------------------------------
 # Clone ZiSoft Awareness Repo
 #--------------------------------------------------
@@ -37,6 +36,7 @@ echo "\n#############################################"
 sudo mkdir zisoft-test
 cd  zisoft-test
 sudo git clone https://gitlab.com/zisoft/awareness.git --branch $release_date
+
 
 
 #--------------------------------------------------
@@ -110,12 +110,14 @@ echo "\n--- Build ZiSoft APP--"
 
 echo "\n#############################################"
 
+
 sudo zisoft build --docker --sass --app --ui --composer
 
 echo -e "\n--- Package ZiSoft APP--"
 
 
 sudo zisoft package
+
 
 #--------------------------------------------------
 # Deploy  ZiSoft Awareness Project
@@ -131,13 +133,16 @@ echo "\n#############################################"
 
 sudo zisoft deploy --prod
 
-container_web_id="$(sudo docker ps | grep web | awk '{print $1}')"
+sleep 3m
+
+container_web_id="$(sudo docker ps | grep zisoft/awareness/web | awk '{print $1}')"
+
+container_ui_id="$(sudo docker ps | grep zisoft/awareness/ui | awk '{print $1}')"
 
 sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=init"
 
-curl -L https://downloads.portainer.io/portainer-agent-stack.yml -o portainer-agent-stack.yml
+sudo docker restart $container_ui_id
 
-docker stack deploy --compose-file=portainer-agent-stack.yml portainer
 
 #--------------------------------------------------
 #  ZiSoft Awareness Project  Installed Successfully 
@@ -150,5 +155,3 @@ echo "\n-----ZiSoft Awareness Project  Installed Successfully ----"
 
 
 echo "\n#############################################"
-
-

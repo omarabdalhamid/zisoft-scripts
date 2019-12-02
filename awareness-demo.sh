@@ -162,6 +162,9 @@ sudo docker exec -it $container_web_id bash -c "php artisan zinad:lesson social 
 
 sudo docker exec -it $container_web_id bash -c "php artisan zinad:lesson wifi 1 720 prod"
 
+sudo docker exec -it $container_web_id bash -c "php artisan zinad:lesson aml 1 720 prod"
+
+
 
 sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=DropRecreateDB"
 

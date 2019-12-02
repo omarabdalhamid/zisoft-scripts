@@ -110,9 +110,6 @@ echo "\n--- Build ZiSoft APP--"
 
 echo "\n#############################################"
 
-sudo wget https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/Demo.php
-sudo rm -rf awareness/app/Console/Commands/Demo.php
-sudo mv Demo.php awareness/app/Console/Commands/
 
 sudo zisoft build --docker --sass --app --ui --composer
 
@@ -138,7 +135,20 @@ sudo zisoft deploy --prod
 
 sleep 3m
 
-container_web_id="$(sudo docker ps | grep web | awk '{print $1}')"
+container_web_id="$(sudo docker ps | grep zisoft/awareness/web | awk '{print $1}')"
+
+container_ui_id="$(sudo docker ps | grep zisoft/awareness/ui | awk '{print $1}')"
+
+
+
+sudo docker exec -it $container_web_id bash -c 'sed -i "/zinad:lessons/a '\''campaign1'\'' => 1"  app/Console/Commands/Demo.php'
+
+sudo docker exec -it $container_web_id bash -c 'sed -i "/zinad:lessons/a '\''mode'\'' => '\''none'\'',"  app/Console/Commands/Demo.php'
+
+sudo docker exec -it $container_web_id bash -c 'sed -i "/zinad:lessons/a '\''resolution'\'' => '\''720'\'',"  app/Console/Commands/Demo.php'
+
+sudo docker exec -it $container_web_id bash -c 'sed -i "/zinad:lessons/a '\''version'\'' => 1,"  app/Console/Commands/Demo.php'
+
 
 sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=init"
 
@@ -163,6 +173,8 @@ sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=init
 
 
 sudo docker exec -it $container_web_id bash -c "php artisan zisoft:demo 100 5 30"
+
+sudo docker restart $container_ui_id
 
 curl -L https://downloads.portainer.io/portainer-agent-stack.yml -o portainer-agent-stack.yml
 

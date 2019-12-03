@@ -28,7 +28,7 @@ echo "\n#############################################"
 
 sudo mkdir zisoft-test
 cd  zisoft-test
-sudo git clone https://gitlab.com/zisoft/awareness.git --branch 
+sudo git clone https://gitlab.com/zisoft/awareness.git
 
 
 

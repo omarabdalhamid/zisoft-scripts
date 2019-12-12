@@ -19,16 +19,20 @@ echo  "\n--- Generate ZiSoft Licenses --"
 
 echo "\n#############################################"
 
-read -p "Enter ZiSoft Awareness  Client Name :   "  client_name
+read -p "\nEnter ZiSoft Awareness  Client Name :   "  client_name
 
-read -p "Enter  Number of Users :   "  client_users
+read -p "\nEnter  Number of Users :   "  client_users
 
-read -p "Enter Number of Phishing_Users :   "  phishing_users
+read -p "\nEnter Number of Phishing_Users :   "  phishing_users
+
+read -p "\nEnter End date (YYYY-MM-DD) :   "  $end_date
+
+read -p "\nEnter Phishing End date (YYYY-MM-DD) :   "  $phishing_date
 
 
 container_web_id="$(sudo docker ps | grep zisoft/awareness/web | awk '{print $1}')"
 
-sudo docker exec -it $container_web_id bash -c "php artisan zisoft:license_create $client_name 2019-06-12 $client_users 2021-06-11 $phishing_users"
+sudo docker exec -it $container_web_id bash -c "php artisan zisoft:license_create $client_name $end_date $client_users $phishing_date $phishing_users"
 
 
 echo "\n#############################################"

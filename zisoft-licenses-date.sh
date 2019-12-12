@@ -22,16 +22,16 @@ echo "\n#############################################"
 read -p "Enter ZiSoft Awareness  Client Name :   "  client_name
 echo "\n"
 
-read -p "\nEnter  Number of Users :   "  client_users
+read -p "Enter  Number of Users :   "  client_users
 echo "\n"
 
-read -p "\nEnter Number of Phishing_Users :   "  phishing_users
+read -p "Enter Number of Phishing_Users :   "  phishing_users
 echo "\n"
 
-read -p "\nEnter End date (YYYY-MM-DD) :   "  end_date
+read -p "Enter End date (YYYY-MM-DD) :   "  end_date
 echo "\n"
 
-read -p "\nEnter Phishing End date (YYYY-MM-DD) :   "  phishing_date
+read -p "Enter Phishing date (YYYY-MM-DD) :   "  phishing_date
 echo "\n"
 
 container_web_id="$(sudo docker ps | grep zisoft/awareness/web | awk '{print $1}')"

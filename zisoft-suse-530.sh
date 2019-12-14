@@ -40,7 +40,7 @@ systemctl start docker
 
 sudo mkdir zisoft-test
 cd  zisoft-test
-sudo git clone https://omarabdalhamid:omaRR**1990@gitlab.com/zisoft/awareness.git --branch 2.7.1
+sudo git clone https://omarabdalhamid:omaRR**1990@gitlab.com/zisoft/image/awareness.git --branch habeesh530-11-12
 
 
 

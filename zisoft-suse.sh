@@ -96,12 +96,12 @@ echo "\n--- Build ZiSoft APP--"
 echo "\n#############################################"
 
 
-sudo zisoft build --docker --sass --app --ui --composer
+zisoft build --docker --sass --app --ui --composer
 
 echo -e "\n--- Package ZiSoft APP--"
 
 
-sudo zisoft package
+zisoft package
 
 
 #--------------------------------------------------
@@ -116,7 +116,7 @@ echo  "\n--- Deploy ZiSoft APP--"
 
 echo "\n#############################################"
 
-sudo zisoft deploy --prod
+zisoft deploy --prod
 
 sleep 3m
 

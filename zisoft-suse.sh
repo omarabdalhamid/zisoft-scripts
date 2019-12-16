@@ -30,6 +30,7 @@ echo "\n--- Clone ZiSoft branch --"
 echo "\n#############################################"
 
 cd /opt/
+zypper update -y
 zypper install -y git 
 zypper install -y npm 
 zypper install -y docker 

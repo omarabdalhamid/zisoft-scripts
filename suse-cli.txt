@@ -1,0 +1,27 @@
+
+===== Download suse.tar ===========
+
+wget https://suse.s3.us-east-2.amazonaws.com/suse.tar
+
+tar xvf suse.tar
+
+##############################################################
+
+============ Pull Zisoft 2.7.1 - package images ===========
+
+wget https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/zisoft-2-7-1-pull.sh && sh  zisoft-2-7-1-pull.sh
+
+
+##############################################################
+
+=============== If you need to clean Images ================
+
+docker rmi -f $(docker image ls)
+
+############################################################
+
+========= Downdload 2.7.1-p compose file ==============
+
+wget https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/docker-compose.prod.linux.yml
+
+==========================================================

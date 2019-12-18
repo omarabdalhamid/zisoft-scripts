@@ -9,37 +9,23 @@ services:
       - MYSQL_PASSWORD=${DB_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
     volumes:
-      - ./storage/database:/var/lib/mysql
+      - db_data:/var/lib/mysql
   web:
     image: registry.gitlab.com/zisoft/image/awareness/web:2.7.1-p
-    volumes:
-      - "./:/var/www/html/"
-      - "./httpd.conf:/etc/httpd/conf/httpd.conf"
   ui:
     image: registry.gitlab.com/zisoft/image/awareness/ui:2.7.1-p
-    volumes:
-      - "./ui/dist:/usr/local/apache2/htdocs/"
   worker:
     image: registry.gitlab.com/zisoft/image/awareness/worker:2.7.1-p
-    volumes:
-      - "./:/var/www/html/"
   meta:
     image: registry.gitlab.com/zisoft/image/awareness/meta:2.7.1-p
     environment:
       - MB_DB_FILE=/tmp/metabase.db
-    volumes:
-      - ./metabase:/tmp
   proxy:
     image: registry.gitlab.com/zisoft/image/awareness/proxy:2.7.1-p
     ports:
       - "80:80"
       - "443:443"
-    volumes:
-      - ./proxy/httpd.conf:/usr/local/apache2/conf/httpd.conf
-      - ./proxy/index.html:/usr/local/apache2/htdocs/index.html
-      - ./proxy/httpd-ssl.conf:/usr/local/apache2/conf/extra/httpd-ssl.conf
-      - ./ssl/server.crt:/usr/local/apache2/conf/server.crt
-      - ./ssl/server.key:/usr/local/apache2/conf/server.key
-      - ./ssl/server.chain.crt:/usr/local/apache2/conf/server-ca.crt
   cron:
     image: registry.gitlab.com/zisoft/image/awareness/cron:2.7.1-p
+volumes:
+    db_data: {}

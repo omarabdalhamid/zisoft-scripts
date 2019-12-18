@@ -27,5 +27,6 @@ services:
       - "443:443"
   cron:
     image: registry.gitlab.com/zisoft/image/awareness/cron:2.7.1-p
+    
 volumes:
     db_data:

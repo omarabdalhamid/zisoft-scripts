@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: registry.gitlab.com/zisoft/image/awareness/db:2.7.1-p
+    image: registry.gitlab.com/zisoft/image/awareness/db-3-package
     environment:
       - MYSQL_USER=${DB_USERNAME_USER}
       - MYSQL_DATABASE=${DB_DATABASE}
@@ -11,22 +11,22 @@ services:
     volumes:
       - db_data:/var/lib/mysql
   web:
-    image: registry.gitlab.com/zisoft/image/awareness/web:2.7.1-p
+    image: rregistry.gitlab.com/zisoft/image/awareness/web-3-package
   ui:
-    image: registry.gitlab.com/zisoft/image/awareness/ui:2.7.1-p
+    image: registry.gitlab.com/zisoft/image/awareness/ui-3-package
   worker:
-    image: registry.gitlab.com/zisoft/image/awareness/worker:2.7.1-p
+    image: registry.gitlab.com/zisoft/image/awareness/worker-3-package
   meta:
-    image: registry.gitlab.com/zisoft/image/awareness/meta:2.7.1-p
+    image: registry.gitlab.com/zisoft/image/awareness/meta-3-package
     environment:
       - MB_DB_FILE=/tmp/metabase.db
   proxy:
-    image: registry.gitlab.com/zisoft/image/awareness/proxy:2.7.1-p
+    image: registry.gitlab.com/zisoft/image/awareness/proxy-3-package
     ports:
       - "80:80"
       - "443:443"
   cron:
-    image: registry.gitlab.com/zisoft/image/awareness/cron:2.7.1-p
+    image: registry.gitlab.com/zisoft/image/awareness/cron-3-package
     
 volumes:
     db_data:

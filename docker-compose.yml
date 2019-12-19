@@ -4,10 +4,10 @@ services:
   db:
     image: registry.gitlab.com/zisoft/image/awareness/db-3-package
     environment:
-      - MYSQL_USER=${DB_USERNAME_USER}
-      - MYSQL_DATABASE=${DB_DATABASE}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_USER=zisoft
+      - MYSQL_DATABASE=zisoft
+      - MYSQL_PASSWORD=Password1
+      - MYSQL_ROOT_PASSWORD=Password1
     volumes:
       - db_data:/var/lib/mysql
   web:

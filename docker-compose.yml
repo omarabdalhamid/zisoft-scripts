@@ -11,7 +11,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
   web:
-    image: rregistry.gitlab.com/zisoft/image/awareness/web-3-package
+    image: registry.gitlab.com/zisoft/image/awareness/web-3-package
   ui:
     image: registry.gitlab.com/zisoft/image/awareness/ui-3-package
   worker:

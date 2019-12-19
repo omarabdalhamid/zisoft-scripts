@@ -49,6 +49,7 @@ wget https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/dock
 docker login registry.gitlab.com -u omarabdalhamid -p omaRR**1990
 
 docker pull registry.gitlab.com/zisoft/image/awareness/web-3-package:latest
+docker pull registry.gitlab.com/zisoft/image/awareness/proxy-3-package:latest
 docker pull registry.gitlab.com/zisoft/image/awareness/worker-3-package:latest
 docker pull registry.gitlab.com/zisoft/image/awareness/db-3-package:latest
 docker pull registry.gitlab.com/zisoft/image/awareness/cron-3-package:latest

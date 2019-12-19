@@ -57,7 +57,7 @@ docker pull registry.gitlab.com/zisoft/image/awareness/meta-3-package:latest
 
 docker stack deploy -c docker-compose.yml  awareness
 
-sleep 3m
+sleep 30
 
 container_web_id="$(sudo docker ps | grep web-3-package | awk '{print $1}')"
 

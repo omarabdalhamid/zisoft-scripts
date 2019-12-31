@@ -7,7 +7,6 @@ echo  "\n--- Download Docker Repositry --"
 echo "\n#############################################"
 
 sudo apt-get update -y
-sudo apt install npm -y
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -52,9 +51,13 @@ cd /zisoft
 
 wget https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/docker-compose.yml
 
-sudo docker stack deploy -c docker-compose zisoft3
+sudo docker stack deploy -c docker-compose.yml zisoft3
+
 
 container_web_id="$(sudo docker ps | grep web | awk '{print $1}')"
+
+sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=init"
+
 
 sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=DropRecreateDB"
 

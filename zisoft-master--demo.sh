@@ -28,7 +28,7 @@ echo "\n#############################################"
 
 sudo mkdir zisoft-test
 cd  zisoft-test
-sudo git clone https://gitlab.com/zisoft/awareness.git
+sudo git clone https://omarabdalhamid:omaRR**1990@gitlab.com/zisoft/awareness.git
 
 
 
@@ -73,7 +73,7 @@ sudo apt-get install docker-compose -y
 
 sudo usermod -aG docker ${USER}
 
-sudo docker login registry.gitlab.com
+sudo docker login registry.gitlab.com -u omarabdalhamid -p omaRR**1990
 sudo docker swarm init
 
 #--------------------------------------------------

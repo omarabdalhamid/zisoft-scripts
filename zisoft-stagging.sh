@@ -32,7 +32,7 @@ echo "\n#############################################"
 
 sudo mkdir zisoft-test
 cd  zisoft-test
-sudo git clone https://omarabdalhamid:omaRR**1990@gitlab.com/zisoft/image/awareness.git --branch habeesh
+sudo git clone https://gitlab.com/zisoft/image/awareness.git --branch habeesh
 
 
 

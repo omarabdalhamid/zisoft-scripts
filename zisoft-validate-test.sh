@@ -35,7 +35,7 @@ echo "\n#############################################"
 
 sudo mkdir zisoft-test
 cd  zisoft-test
-sudo git clone https://omarabdalhamid:omaRR**1990@gitlab.com/zisoft/awareness.git 
+sudo git clone https://gitlab.com/zisoft/awareness.git 
 
 
 

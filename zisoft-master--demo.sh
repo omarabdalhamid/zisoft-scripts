@@ -133,16 +133,6 @@ container_web_id="$(sudo docker ps | grep zisoft/awareness/web | awk '{print $1}
 container_ui_id="$(sudo docker ps | grep zisoft/awareness/ui | awk '{print $1}')"
 
 
-
-sudo docker exec -it $container_web_id bash -c 'sed -i "/zinad:lessons/a '\''campaign1'\'' => 1"  app/Console/Commands/Demo.php'
-
-sudo docker exec -it $container_web_id bash -c 'sed -i "/zinad:lessons/a '\''mode'\'' => '\''none'\'',"  app/Console/Commands/Demo.php'
-
-sudo docker exec -it $container_web_id bash -c 'sed -i "/zinad:lessons/a '\''resolution'\'' => '\''720'\'',"  app/Console/Commands/Demo.php'
-
-sudo docker exec -it $container_web_id bash -c 'sed -i "/zinad:lessons/a '\''version'\'' => 1,"  app/Console/Commands/Demo.php'
-
-
 sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=init"
 
 sudo docker exec -it $container_web_id bash -c "php artisan zinad:lesson browser 1 720 prod"

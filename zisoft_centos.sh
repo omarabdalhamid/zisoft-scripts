@@ -15,6 +15,8 @@
 ################################################################################
 printf "\n  Step 1/7 -- Update CENTOS and install [  container-selinux // device-mapper-persistent-data l //vm2     ]...\n\n"
 
+sudo yum update -y
+sudo yum install wget -y
 sudo wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 sudo yum install container-selinux -y
 

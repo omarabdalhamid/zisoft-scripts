@@ -86,4 +86,4 @@ sudo systemctl enable docker
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 }
-zisoft_swarm_installation_ubuntu()
+zisoft_swarm_installation_ubuntu

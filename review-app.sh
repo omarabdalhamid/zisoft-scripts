@@ -7,7 +7,7 @@ unzip -q review.zip
 
 cd review/awareness/
 
-sudo docker deploy -c docker-compose.offline.linux.yml $CI_PIPELINE_ID
+sudo docker stack deploy -c docker-compose.offline.linux.yml $CI_PIPELINE_ID
 
 sleep 30
 

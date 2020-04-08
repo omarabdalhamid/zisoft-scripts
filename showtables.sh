@@ -435,4 +435,4 @@ echo $show_email_now >> email_change.log
 
 sleep 10m
 
-nohup ./showtables1.sh &
+nohup ./showtables.sh &

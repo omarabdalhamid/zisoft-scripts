@@ -151,13 +151,13 @@ sudo docker exec -it $container_web_id bash -c "php artisan zinad:lessons 720 1 
 
 
 
-sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=DropRecreateDB"
+#sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=DropRecreateDB"
 
 
-sudo docker exec -it $container_web_id bash -c "php artisan migrate"
+#sudo docker exec -it $container_web_id bash -c "php artisan migrate"
 
 
-sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=init"
+#sudo docker exec -it $container_web_id bash -c "php artisan db:seed --class=init"
 
 
 sudo docker exec -it $container_web_id bash -c "php artisan zisoft:demo 100 5 30"

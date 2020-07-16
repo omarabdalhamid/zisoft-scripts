@@ -176,9 +176,6 @@ pages_: # dummy just for testing
   stage: publish
   script:
     - zisoft build --docker --website
-    - rm -fr public
-    - mkdir public
-    - mv website/build/awareness3.1/* public
   artifacts:
     paths:
     - public
@@ -190,9 +187,6 @@ pages:
   stage: publish
   script:
     - zisoft build --docker --website
-    - rm -fr public
-    - mkdir public
-    - mv website/build/awareness3.1/* public
   artifacts:
     paths:
     - public

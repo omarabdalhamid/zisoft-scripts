@@ -1,0 +1,30 @@
+
+Zisoft Awareness 3.1 Impelemtaion Notes :
+
+  1- Download [ OVA / VDI / Qcow2 / RAW / VHDX ] and import by virtualization platform .
+  
+  2- Change IP add for APP Tier & DB Tier . 
+  
+  3- Check Docker is running and imagee is ready to use .
+  
+  4- Connect SSH to APP & DB  VM . [ https://awarenessrelease.s3.us-east-2.amazonaws.com/SSH-Connector.exe ]
+  
+  5- Init docker swarm at APP Tier .
+  
+  6- Join DB Tier to APP swarm by using docker join-token.
+  
+  7- Check docker nodes are ready and APP Node have leader / Manager  role .
+  
+  8- Update node with labels Tier=app  & Tier=data .
+  
+  9- Add zisoft-2tier.yml  stack file to App Tier . [ https://awarenessrelease.s3.us-east-2.amazonaws.com/zisoft-2tier.yml ]
+  
+  10- Deploy zisoft awareness 2tier docker stack .
+  
+  11- Check docker services [ proxy - ui - web - worker - cron - metabase - db   ]  runnnig ( 1/1 ) .
+  
+  12- Check [ proxy - ui - web - worker-cron ] running on APP node .
+  
+  13- Check [ metabase - db ] running on Data node .
+  
+  14- Login by zisoft user to enable LDAP and  add license .

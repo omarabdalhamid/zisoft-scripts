@@ -15,11 +15,11 @@
 
 
 
-container_web_id="$(sudo docker ps | grep staging_web | awk '{print $1}')"
+container_web_id="$(sudo docker ps | grep web | awk '{print $1}')"
 
-container_cron_id="$(sudo docker ps | grep staging_cron | awk '{print $1}')"
+container_cron_id="$(sudo docker ps | grep cron | awk '{print $1}')"
 
-container_db_id="$(sudo docker ps | grep staging_db | awk '{print $1}')"
+container_db_id="$(sudo docker ps | grep db | awk '{print $1}')"
 
 
 ##### update web container timezone #####

@@ -31,9 +31,9 @@ sudo docker exec -it $container_web_id bash -c "cp  /usr/share/zoneinfo/Asia/Riy
 
 ##### update cron container timezone #####
 
-sudo docker exec -it $container_cron_id sh -c "apk add curl"
+#sudo docker exec -it $container_cron_id sh -c "apk add curl"
 
-sudo docker exec -it $container_cron_id sh -c "apk add tzdata"
+#sudo docker exec -it $container_cron_id sh -c "apk add tzdata"
 
 sudo docker exec -it $container_cron_id sh -c "rm -rf /etc/localtime"
 

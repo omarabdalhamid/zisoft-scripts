@@ -42,6 +42,8 @@ master:
   stage: check
   script:
     -  curl -sSfl https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/Check_master.sh |sh
+  tags:
+    - awareness-shell
   only:
     - merge_requests
 

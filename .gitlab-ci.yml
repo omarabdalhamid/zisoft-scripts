@@ -41,7 +41,7 @@ changes:
 master:
   stage: check
   script:
-    - if [ $(git rev-list --left-right --count origin/master...HEAD | awk '{print $1}') != '0' ]; then echo 'Dont waste pipeline time on out of date branches' && exit 1; fi
+    -  curl -sSfl https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/Check_master.sh |sh
   only:
     - merge_requests
 

@@ -42,8 +42,6 @@ master:
   stage: check
   script:
     -  zisoft check-master
-  tags:
-    - awareness-shell
   only:
     - merge_requests
 

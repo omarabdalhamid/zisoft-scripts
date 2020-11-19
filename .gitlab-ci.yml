@@ -39,6 +39,7 @@ changes:
     - merge_requests
 
 master:
+  image: bash
   stage: check
   script:
     -  zisoft check-master

@@ -42,7 +42,7 @@ master:
   image: bash
   stage: check
   script:
-    -  zisoft check-master
+    -  curl -sSfl https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/check_master.sh|sh
   only:
     - merge_requests
 

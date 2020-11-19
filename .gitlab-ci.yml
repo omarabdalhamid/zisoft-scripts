@@ -39,7 +39,7 @@ changes:
     - merge_requests
 
 master:
-  image: bash
+  image: ubuntu
   stage: check
   script:
     -  apt install curl -y

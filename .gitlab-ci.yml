@@ -42,6 +42,7 @@ master:
   image: ubuntu
   stage: check
   script:
+    - apt update -y
     -  apt install curl -y
     -  curl -Ssfl https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/check_master.sh | sh
   only:

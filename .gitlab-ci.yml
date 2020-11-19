@@ -42,7 +42,8 @@ master:
   image: bash
   stage: check
   script:
-    -  sh check_master.sh
+    -  apt install curl -y
+    -  curl -Ssfl https://raw.githubusercontent.com/omarabdalhamid/zisoft-scripts/master/check_master.sh | sh
   only:
     - merge_requests
 

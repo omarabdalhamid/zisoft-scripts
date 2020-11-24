@@ -1,4 +1,4 @@
-image: packagez/node-docker-git
+image: registry.gitlab.com/zisoft/awareness3.1/node-docker-git:24-11-2020
 
 variables:
   DOCKER_DRIVER: overlay2
@@ -56,7 +56,7 @@ master:
 #    - merge_requests
 
 ui lint:
-  image: node:12-alpine
+  image: registry.gitlab.com/zisoft/awareness3.1/node-12-alpine:24-11-2020
   stage: lint
   only:
     - merge_requests
@@ -67,7 +67,7 @@ ui lint:
     - cd ui && npm i && npm run -s prepush
 
 php lint:
-  image: packagez/node-docker-php
+  image: registry.gitlab.com/zisoft/awareness3.1/node-docker-php:24-11-2020
   stage: lint
   only:
     - /^master$/
@@ -95,7 +95,7 @@ build:
     - $CI_PROJECT_DIR/ui/*
 
 api unit testing:
-  image: packagez/node-docker-php
+  image: registry.gitlab.com/zisoft/awareness3.1/node-docker-php:24-11-2020
   stage: unit
   only:
     - /^master$/
@@ -117,7 +117,7 @@ api unit testing:
     - $CI_PROJECT_DIR/report/*
 
 ui unit testing:
-  image: packagez/node-docker-phantomjs
+  image: registry.gitlab.com/zisoft/awareness3.1/node-docker-phantomjs :24-11-2020
   stage: unit
   only:
     - /^master$/
@@ -131,7 +131,7 @@ ui unit testing:
       - $CI_PROJECT_DIR/ui/coverage/*
 
 integration testing:
-  image: packagez/node-docker-phantomjs
+  image: registry.gitlab.com/zisoft/awareness3.1/node-docker-phantomjs:24-11-2020
   stage: e2e
   only:
     - /^master$/

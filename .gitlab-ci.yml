@@ -8,7 +8,7 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
   
 services:
-  - docker:19.03.1-dind
+  - registry.gitlab.com/zisoft/awareness3.1/dind:24-11-2020
 
 before_script:
   - which docker && docker swarm init || true

@@ -117,7 +117,7 @@ api unit testing:
     - $CI_PROJECT_DIR/report/*
 
 ui unit testing:
-  image: registry.gitlab.com/zisoft/awareness3.1/node-docker-phantomjs :24-11-2020
+  image: registry.gitlab.com/zisoft/awareness3.1/node-docker-phantomjs:24-11-2020
   stage: unit
   only:
     - /^master$/

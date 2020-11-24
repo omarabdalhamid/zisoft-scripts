@@ -39,7 +39,7 @@ changes:
     - merge_requests
 
 master:
-  image: ubuntu
+  image: registry.gitlab.com/zisoft/awareness3.1/shell
   stage: check
   script:
     - apt update -y

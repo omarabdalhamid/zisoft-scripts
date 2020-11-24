@@ -2,7 +2,7 @@ image: registry.gitlab.com/zisoft/awareness3.1/node-docker-git:24-11-2020
 
 variables:
   DOCKER_DRIVER: overlay2
-  DOCKER_HOST: tcp://docker:2375
+  DOCKER_HOST: tcp://registry.gitlab.com:2375
   DOCKER_TLS_CERTDIR: ""
   GIT_STRATEGY: clone
   GIT_SUBMODULE_STRATEGY: recursive

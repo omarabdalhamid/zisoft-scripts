@@ -19,8 +19,6 @@ echo  "\n--- Installing ZiSoft From Branch --"
 
 echo "\n#############################################"
 
-read -p "Enter ZiSoft Awareness  Branch Name :   "  release_date
-
 
 #--------------------------------------------------
 # Clone ZiSoft Awareness Repo
@@ -35,7 +33,7 @@ echo "\n#############################################"
 
 sudo mkdir zisoft-test
 cd  zisoft-test
-sudo git clone https://gitlab.com/zisoft/awareness.git --branch $release_date
+sudo git clone https://gitlab.com/zisoft/awareness3.1.git
 
 
 
